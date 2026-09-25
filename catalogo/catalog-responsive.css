@@ -1,0 +1,105 @@
+/* Vista responsive para páginas editoriales A4; la impresión conserva 210 × 297 mm. */
+@media screen {
+  .print-action {
+    text-decoration: none;
+  }
+
+  .catalog {
+    width: 100%;
+    justify-items: center;
+  }
+
+  .page-frame {
+    position: relative;
+    flex: none;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: visible;
+  }
+
+  .page-frame > .page,
+  .page-frame > main.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    transform-origin: top left;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  body {
+    padding: 72px 12px 28px;
+  }
+
+  .catalog {
+    gap: 20px;
+  }
+
+  .print-action {
+    top: 12px;
+    right: 12px;
+    max-width: calc(100vw - 24px);
+    min-height: 40px;
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  body {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
+
+@media screen {
+  html:has(body.catalog-embed),
+  body.catalog-embed {
+    width: 210mm;
+    height: 297mm;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  body.catalog-embed .catalog {
+    display: block;
+    width: 210mm;
+    height: 297mm;
+  }
+
+  body.catalog-embed .page-frame {
+    margin: 0;
+  }
+}
+
+@media print {
+  .page-frame {
+    display: contents !important;
+  }
+
+  .page-frame > .page,
+  .page-frame > main.cover {
+    position: relative !important;
+    transform: none !important;
+  }
+
+  .page-frame:not(:last-child) > .page {
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+
+  .page-frame:last-child > .page {
+    break-after: auto !important;
+    page-break-after: auto !important;
+  }
+}

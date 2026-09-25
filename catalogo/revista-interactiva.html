@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Revista interactiva del catálogo Simple 2026.">
+  <title>Simple — Revista interactiva SS26</title>
+  <link rel="stylesheet" href="revista-interactiva.css">
+</head>
+<body>
+  <header class="reader-header">
+    <a class="reader-brand" href="../index.html" aria-label="Volver a la presentación"><span></span>Simple</a>
+    <p>Catálogo interactivo · SS26</p>
+  </header>
+
+  <main class="reader" aria-label="Revista interactiva Simple">
+    <div class="book-shell" id="book-shell" aria-live="polite">
+      <div class="book-stage" id="book-stage"></div>
+      <div class="loading-card" id="loading-card"><span></span><b>Cargando catálogo</b></div>
+    </div>
+
+    <p class="gesture-hint" id="gesture-hint">Arrastrá para pasar página <span>← →</span></p>
+  </main>
+
+  <nav class="floating-actions" aria-label="Opciones del catálogo">
+    <a href="catalogo-simple-21-paginas.html">Ver HTML <span>↗</span></a>
+    <a class="download-action" href="catalogo-simple-21-paginas.pdf" download>Descargar PDF <span>↓</span></a>
+  </nav>
+
+  <script src="vendor/page-flip/page-flip.browser.js"></script>
+  <script src="revista-interactiva.js"></script>
+</body>
+</html>

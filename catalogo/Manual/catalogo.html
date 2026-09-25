@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portada A4 del catálogo de 21 páginas 2026 de Simple, ropa casual-formal para hombre." />
+  <title>Simple — Catálogo 2026 · 21 páginas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Zen+Antique+Soft&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --base: #f0f1ea;
+      --principal: #969065;
+      --secundario: #659681;
+      --acento: #d0a1ff;
+      --texto: #363441;
+      --blanco: #ffffff;
+      --borde: 3px solid var(--texto);
+      --sombra: 7px 7px 0 var(--texto);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: 52px 24px;
+      overflow-x: auto;
+      color: var(--texto);
+      background:
+        linear-gradient(rgba(54, 52, 65, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(54, 52, 65, 0.07) 1px, transparent 1px),
+        #d9d9d3;
+      background-size: 24px 24px;
+      font-family: "Zen Antique Soft", Georgia, serif;
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    .print-action {
+      position: fixed;
+      z-index: 20;
+      top: 18px;
+      right: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 2px solid var(--texto);
+      border-radius: 0;
+      box-shadow: 4px 4px 0 var(--texto);
+      color: var(--texto);
+      background: var(--acento);
+      font-family: "Oswald", "Arial Narrow", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .print-action:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--texto);
+    }
+
+    .print-action:focus-visible {
+      outline: 3px solid var(--blanco);
+      outline-offset: 3px;
+    }
+
+    .print-action svg {
+      width: 17px;
+      height: 17px;
+      fill: currentColor;
+    }
+
+    .cover {
+      position: relative;
+      isolation: isolate;
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      background: var(--base);
+      box-shadow: 0 22px 70px rgba(54, 52, 65, 0.24);
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    .cover::before {
+      content: "";
+      position: absolute;
+      z-index: -3;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent 0 8.5%, rgba(54, 52, 65, 0.08) 8.5% calc(8.5% + 1px), transparent calc(8.5% + 1px)),
+        linear-gradient(180deg, transparent 0 7%, rgba(54, 52, 65, 0.08) 7% calc(7% + 1px), transparent calc(7% + 1px));
+    }
+
+    .topline {
+      position: absolute;
+      z-index: 5;
+      top: 16mm;
+      left: 15mm;
+      right: 15mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 3.5mm;
+      border-bottom: 1.1mm solid var(--texto);
+      font-family: "Oswald", "Arial Narrow", sans-serif;
+      text-transform: uppercase;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 3mm;
+      margin: 0;
+      font-size: 7.2mm;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.08em;
+    }
+
+    .brand__mark {
+      width: 5mm;
+      height: 5mm;
+      border: 0.8mm solid var(--texto);
+      background: var(--acento);
+      box-shadow: 1.4mm 1.4mm 0 var(--texto);
+    }
+
+    .issue {
+      margin: 0;
+      font-size: 3.2mm;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+    }
+
+    .photo-shadow {
+      position: absolute;
+      z-index: -2;
+      top: 42mm;
+      right: 12mm;
+      width: 124mm;
+      height: 188mm;
+      background: var(--principal);
+      border: 0.9mm solid var(--texto);
+      transform: translate(4.5mm, 4.5mm);
+    }
+
+    .photo {
+      position: absolute;
+      z-index: -1;
+      top: 42mm;
+      right: 16.5mm;
+      width: 124mm;
+      height: 188mm;
+      margin: 0;
+      overflow: hidden;
+      border: 0.9mm solid var(--texto);
+      background: var(--principal);
+    }
+
+    .photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(240, 241, 234, 0.02) 45%, rgba(54, 52, 65, 0.23) 100%),
+        linear-gradient(90deg, rgba(101, 150, 129, 0.15), transparent 54%);
+      pointer-events: none;
+    }
+
+    .photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 49% 50%;
+      filter: saturate(0.77) contrast(1.04);
+    }
+
+    .season {
+      position: absolute;
+      z-index: 4;
+      top: 36mm;
+      left: 15mm;
+      display: inline-block;
+      margin: 0;
+      padding: 2.3mm 4mm 2mm;
+      border: 0.8mm solid var(--texto);
+      box-shadow: 2mm 2mm 0 var(--texto);
+      background: var(--acento);
+      font-family: "Oswald", "Arial Narrow", sans-serif;
+      font-size: 3.2mm;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
+    }
+
+    .title-block {
+      position: absolute;
+      z-index: 3;
+      top: 80mm;
+      left: 15mm;
+      width: 180mm;
+    }
+
+    .catalog-title {
+      margin: 0;
+      color: var(--texto);
+      font-family: "Oswald", "Arial Narrow", sans-serif;
+      font-size: 25.5mm;
+      font-weight: 700;
+      line-height: 0.82;
+      letter-spacing: -0.045em;
+      text-transform: uppercase;
+      text-shadow:
+        -1.2mm -1.2mm 0 var(--base),
+        1.2mm -1.2mm 0 var(--base),
+        -1.2mm 1.2mm 0 var(--base),
+        1.2mm 1.2mm 0 var(--base),
+        2.3mm 2.3mm 0 var(--secundario);
+    }
+
+    .catalog-title span {
+      display: block;
+    }
+
+    .catalog-title span:last-child {
+      margin-left: 16mm;
+    }
+
+    .descriptor {
+      position: absolute;
+      z-index: 5;
+      top: 164mm;
+      left: 15mm;
+      width: 77mm;
+      margin: 0;
+      padding: 5mm 5.5mm;
+      border: 0.8mm solid var(--texto);
+      box-shadow: var(--sombra);
+      background: var(--base);
+    }
+
+    .descriptor__eyebrow {
+      display: block;
+      margin-bottom: 2.5mm;
+      color: var(--secundario);
+      font-family: "Oswald", "Arial Narrow", sans-serif;
+      font-size: 3.1mm;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .descriptor__text {
+      margin: 0;
+      font-size: 5mm;
+      line-height: 1.26;
+    }
+
+    .edition {
+      position: absolute;
+      z-index: 4;
+      right: 17mm;
+      bottom: 50mm;
+      display: grid;
+      place-items: center;
+      width: 27mm;
+      height: 27mm;
+      border: 0.9mm solid var(--texto);
+      border-radius: 50%;
+      background: var(--secundario);
+      color: var(--base);
+      font-family: "Oswald", "Arial Narrow", sans-serif;
+      font-size: 3.2mm;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: 0.1em;
+      text-align: center;
+      text-transform: uppercase;
+      transform: rotate(8deg);
+    }
+
+    .bottom-panel {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 52mm;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 10mm;
+      padding: 11mm 15mm 12mm;
+      border-top: 1.1mm solid var(--texto);
+      background: var(--texto);
+      color: var(--base);
+    }
+
+    .manifesto {
+      max-width: 108mm;
+      margin: 0;
+      font-size: 5.2mm;
+      line-height: 1.25;
+    }
+
+    .manifesto strong {
+      color: var(--acento);
+      font-family: "Oswald", "Arial Narrow", sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .catalog-meta {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 35mm;
+      padding-left: 6mm;
+      border-left: 0.7mm solid var(--principal);
+      font-family: "Oswald", "Arial Narrow", sans-serif;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .catalog-meta p {
+      margin: 0;
+    }
+
+    .catalog-meta__year {
+      color: var(--principal);
+      font-size: 7.5mm;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .catalog-meta__site {
+      font-size: 2.8mm;
+      letter-spacing: 0.15em;
+    }
+
+    .credit {
+      position: absolute;
+      z-index: 6;
+      right: 15mm;
+      bottom: 53.8mm;
+      margin: 0;
+      font-family: "Oswald", "Arial Narrow", sans-serif;
+      font-size: 2.25mm;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .credit a {
+      color: var(--texto);
+      text-decoration: none;
+    }
+
+    .corner-accent {
+      position: absolute;
+      z-index: 4;
+      right: -8mm;
+      top: 26mm;
+      width: 28mm;
+      height: 12mm;
+      border: 0.9mm solid var(--texto);
+      background: var(--secundario);
+      transform: rotate(-8deg);
+    }
+
+    @media (max-width: 860px) {
+      body {
+        display: block;
+        padding: 72px 16px 28px;
+      }
+
+      .cover {
+        margin: 0 auto;
+        transform-origin: top center;
+      }
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 210mm;
+        height: 297mm;
+        min-height: 0;
+        overflow: hidden;
+        padding: 0;
+        background: var(--base);
+      }
+
+      .print-action {
+        display: none !important;
+      }
+
+      .cover {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        box-shadow: none;
+        break-after: avoid;
+        break-inside: avoid;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="../catalog-responsive.css" />
+</head>
+
+<body>
+  <a class="print-action" href="../catalogo-simple-21-paginas.pdf" download aria-label="Descargar catálogo en PDF">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M18 7V3H6v4H3a2 2 0 0 0-2 2v7h5v5h12v-5h5V9a2 2 0 0 0-2-2h-3ZM8 5h8v2H8V5Zm8 14H8v-6h8v6Zm3-8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
+    </svg>
+    Descargar PDF
+  </a>
+
+  <main class="cover" aria-label="Portada del catálogo Simple 2026">
+    <header class="topline">
+      <p class="brand"><span class="brand__mark" aria-hidden="true"></span>Simple</p>
+      <p class="issue">Edición 01 · 2026</p>
+    </header>
+
+    <div class="corner-accent" aria-hidden="true"></div>
+    <p class="season">Nueva colección · 26</p>
+
+    <div class="photo-shadow" aria-hidden="true"></div>
+    <figure class="photo">
+      <img
+        src="imagen.jpg"
+        alt="Hombre con prendas casuales en tonos neutros frente a un muro beige"
+      />
+    </figure>
+
+    <section class="title-block" aria-labelledby="titulo-catalogo">
+      <h1 class="catalog-title" id="titulo-catalogo">
+        <span>Catá</span>
+        <span>logo</span>
+      </h1>
+    </section>
+
+    <aside class="descriptor">
+      <span class="descriptor__eyebrow">Ropa para hombre</span>
+      <p class="descriptor__text">Casual en actitud.<br />Formal en intención.</p>
+    </aside>
+
+    <div class="edition" aria-label="Primavera verano">SS<br />26</div>
+
+    <p class="credit">
+      Foto:
+      <a href="https://www.pexels.com/photo/casual-fashion-portrait-against-beige-wall-36510882/">Mert Coşkun / Pexels</a>
+    </p>
+
+    <footer class="bottom-panel">
+      <p class="manifesto">
+        Vestir bien puede ser <strong>simple.</strong><br />
+        Esenciales que siguen tu ritmo.
+      </p>
+      <div class="catalog-meta">
+        <p class="catalog-meta__year">2026</p>
+        <p class="catalog-meta__site">simplewear.co</p>
+      </div>
+    </footer>
+  </main>
+  <script src="../catalog-responsive.js"></script>
+</body>
+</html>
