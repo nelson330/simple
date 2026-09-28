@@ -4,6 +4,9 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const stage = document.querySelector('#book-stage');
 const loadingCard = document.querySelector('#loading-card');
 const gestureHint = document.querySelector('#gesture-hint');
+const qrDialog = document.querySelector('#qr-dialog');
+const showQr = document.querySelector('#show-qr');
+const closeQr = document.querySelector('#close-qr');
 
 const pad = (number) => String(number).padStart(2, '0');
 const pages = Array.from({ length: PAGE_COUNT }, (_, index) => `revista-pages/page-${pad(index + 1)}.jpg`);
@@ -54,9 +57,17 @@ pageFlip.on('changeState', (event) => {
 pageFlip.loadFromImages(pages);
 
 document.addEventListener('keydown', (event) => {
+  if (qrDialog.open) return;
   if (event.key === 'ArrowRight' || event.key === 'ArrowDown') pageFlip.flipNext('top');
   if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') pageFlip.flipPrev('top');
 });
+
+showQr.addEventListener('click', () => qrDialog.showModal());
+closeQr.addEventListener('click', () => qrDialog.close());
+qrDialog.addEventListener('click', (event) => {
+  if (event.target === qrDialog) qrDialog.close();
+});
+qrDialog.addEventListener('close', () => showQr.focus());
 
 desktopMedia.addEventListener('change', () => {
   requestAnimationFrame(() => {

@@ -1,6 +1,6 @@
 # Créditos de fotografía
 
-Las imágenes añadidas para la ampliación del catálogo fueron descargadas desde Pexels y se conservan localmente en las carpetas de cada categoría.
+Las imágenes de Camisas y Shorts añadidas para la ampliación del catálogo fueron descargadas desde Pexels y se conservan localmente en las carpetas de cada categoría.
 
 ## Camisas
 
@@ -18,7 +18,4 @@ Las imágenes añadidas para la ampliación del catálogo fueron descargadas des
 
 ## Calzado
 
-- `Seccion Calzado.jpg` — [Man in a Suit Wearing Sneakers](https://www.pexels.com/photo/man-in-a-suit-wearing-sneakers-14858922/)
-- `Calzado 1.jpg` — [Man Wearing Sneaker](https://www.pexels.com/photo/man-wearing-sneaker-14474104/)
-- `Calzado 2.jpg` — [Man Wearing Sneakers on a Street](https://www.pexels.com/photo/man-wearing-sneakers-on-a-street-11123066/)
-- `Calzado especial.jpg` — [Man Wearing Blue and White Sneakers](https://www.pexels.com/photo/man-wearing-blue-and-white-sneakers-6684594/)
+Las imágenes actuales de `Calzado/` (`zapato categoria.jpg`, `zapato1.jpg`, `zapato2.jpg` y `zapato especial.jpg`) y `contraportada.jpg` fueron proporcionadas para esta versión del catálogo. Los enlaces de las fotografías anteriores ya no corresponden a los archivos usados.

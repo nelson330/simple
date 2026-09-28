@@ -25,7 +25,21 @@
   <nav class="floating-actions" aria-label="Opciones del catálogo">
     <a href="catalogo-simple-21-paginas.html">Ver HTML <span>↗</span></a>
     <a class="download-action" href="catalogo-simple-21-paginas.pdf" download>Descargar PDF <span>↓</span></a>
+    <button class="qr-action" id="show-qr" type="button" aria-haspopup="dialog" aria-controls="qr-dialog">Mostrar QR <span aria-hidden="true">▦</span></button>
   </nav>
+
+  <dialog class="qr-dialog" id="qr-dialog" aria-labelledby="qr-title" aria-describedby="qr-description">
+    <div class="qr-dialog-header">
+      <span class="qr-brand"><span class="qr-brand-mark" aria-hidden="true"></span>Simple</span>
+      <button class="qr-close" id="close-qr" type="button" aria-label="Cerrar código QR">×</button>
+    </div>
+    <div class="qr-dialog-content">
+      <p class="qr-eyebrow">Catálogo · SS26</p>
+      <h2 id="qr-title">Escaneá el catálogo</h2>
+      <p id="qr-description">Abrí la experiencia Simple desde tu teléfono.</p>
+      <div class="qr-image-frame"><img src="../web-manual-simple/qr-code.png" alt="Código QR de Simple para abrir el catálogo" width="1148" height="1148"></div>
+    </div>
+  </dialog>
 
   <script src="vendor/page-flip/page-flip.browser.js"></script>
   <script src="revista-interactiva.js"></script>
